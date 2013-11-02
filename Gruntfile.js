@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		connect: {
@@ -13,15 +12,15 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			scripts: {
-				files: ['**/*.js'],
-				tasks: [],
-				options: {
-					spawn: false,
-				},
+			options: {
+				livereload: true
 			},
+			files: ['app/**']
 		}
 	});
+
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	grunt.registerTask('default', ['connect', 'watch']);
 };
