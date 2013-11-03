@@ -1,6 +1,12 @@
+@font-face {
+	font-family: "Raleway";
+	src: url("/viewer/font/Raleway/Raleway-Thin.otf");
+}
+
 .playback-wrapper {
 	height: 366px;
 	width: 651px;
+	font-family: "Raleway", sans-serif;
 }
 
 .playback-container {
@@ -15,6 +21,7 @@
 	position: absolute;
 	width: 50%;
 	bottom: 90px;
+	font-size: 20px;
 	padding-left: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -25,10 +32,11 @@
 .overlay-headline {
 	position: absolute;
 	width: 65%;
-	bottom: 40px;
+	bottom: 35px;
+	font-size: 30px;
 	padding-left: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	left: 0px;
 	background-color:rgba(227,60,68,0.7);
 }
