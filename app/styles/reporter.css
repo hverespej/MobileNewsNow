@@ -23,12 +23,35 @@ body{
 }
 
 .info{
-    padding: 47px 0 0 90px;
+    padding: 38px 0 0 90px;
 	
 }
 
 .poppanel span.plabel {
 	display: block;
 	color: white;
-	font-size: 30px;
+	font-size: 27px;
+	padding: 0 0 0 22px;
+}
+
+.reporter{
+    margin: 0 0 5px 0;
+}
+
+.onscene{
+	width: 366px;
+	margin: 0 26px 0 0;
+
+}
+.onscenename{
+    width: 488px;
+
+}
+
+input{
+	border: 3px solid white;
+	height: 72px;
+	font-size: 39px;
+	padding: 0 0 0 21px;
+	color: white;
 }
