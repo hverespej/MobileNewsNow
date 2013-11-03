@@ -130,7 +130,13 @@ function handleUserMediaError(error) {
 }
 
 var constraints = {
-	video: true
+	video: {
+		mandatory: {
+			maxWidth: 850,
+			maxHeight: 480
+		}
+	},
+	audio: true
 };
 
 navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
