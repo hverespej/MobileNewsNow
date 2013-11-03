@@ -51,3 +51,30 @@ button {
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
+
+.toggle-button {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	right: 40px;
+	top: 285px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.overlay-headline {
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	top: 470px;
+}
+
+.overlay-subline {
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
+	top: 570px;
+}

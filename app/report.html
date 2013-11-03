@@ -11,10 +11,15 @@
 	<body>
 		<!-- Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml -->
 		<div class="content-container-wide">
-			<div class="overlay-headline">Breaking news!</div>
+			<div class="overlay-headline" onclick="editHeadline();">
+				Breaking News!
+			</div>
+			<div class="overlay-subline" onclick="editSubline();">
+				Big hackathon in Seattle
+			</div>
 			<div
-				class="toggle-button circular"
-				style="width:150px;height:150px;background-image:url('/images/btn-play-small.png');position:absolute;right:40px;top:285px;"
+				class="toggle-button"
+				style="background-image:url('/images/btn-play-small.png');"
 				onclick="swapToggleButtonImg();">
 			</div>
 		</div>
