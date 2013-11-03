@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="MobileNewsNow | Short description about company">
+		<meta name="description" content="SourceReporter | Short description about company">
 		<meta name="author" content="Your name">
-		<title>MobileNewsNow | Mobile News Now</title>
+		<title>SourceReporter | Mobile News Now</title>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<!-- Bootstrap responsive -->
@@ -13,9 +13,9 @@
 		<!-- Font awesome - iconic font with IE7 support --> 
 		<link href="css/font-awesome.css" rel="stylesheet">
 		<link href="css/font-awesome-ie7.css" rel="stylesheet">
-		<!-- MobileNewsNow theme -->
+		<!-- SourceReporter theme -->
 		<link href="css/boot-business.css" rel="stylesheet">
-		<link href="css/my.css" rel="stylesheet"/>
+		<!-- <link href="css/my.css" rel="stylesheet"/> -->
 
 		<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
 		<script type="text/javascript">
@@ -34,28 +34,15 @@
 				var map = new Microsoft.Maps.Map(document.getElementById("myMap"), mapOptions);
 
 				// Retrieve the location of the map center					
-
-				var c1 = map.getCenter();
-				c1.latitude = 47.630;
-				c1.longitude = -122.312;
-				var c2 = map.getCenter();
-				c2.latitude = 47.614;
-				c2.longitude = -122.361;
-				var c3 = map.getCenter();
-				c3.latitude = 47.618;
-				c3.longitude = -122.334;
-				
-				// Add a pin to the center of the map
-				var pin = new Microsoft.Maps.Pushpin(c1, {draggable: false}); 
-				var pin2 = new Microsoft.Maps.Pushpin(c2, {draggable: false}); 
-				var pin3 = new Microsoft.Maps.Pushpin(c3, {draggable: false});
-
-				// Add a handler to the pushpin drag
-				//Microsoft.Maps.Events.addHandler(pin, 'mouseup', DisplayLoc);
-
-				map.entities.push(pin);
-				map.entities.push(pin2);
-				map.entities.push(pin3);
+          for (var i=0;i<100;i++)
+          {
+              var c = map.getCenter();
+              c.latitude = 47.55 + 0.0950*((2*Math.random()-1)+(2*Math.random()-1)+(2*Math.random()-1));
+              c.longitude = -122.320 + 0.030*((2*Math.random()-1)+(2*Math.random()-1)+(2*Math.random()-1));
+				      // Add a pin to the center of the map
+              var pin = new Microsoft.Maps.Pushpin(c, {draggable: false});
+				      map.entities.push(pin);
+          }
 			}
 		</script>
 	</head>
@@ -65,7 +52,7 @@
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
-						<a href="index.html" class="brand brand-bootbus">MobileNewsNow</a>
+						<a href="index.html" class="brand brand-bootbus">SourceReporter</a>
 						<!-- Below button used for responsive navigation -->
 						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
@@ -101,9 +88,11 @@
 					<div id="heroSlider" class="center">
 						<!-- <img class="center" src="img/placeholder.jpg" class="thumbnail"> -->
 						<div class="main-video">
-							<div id='videos'>
-								<video style = "display:none" id='localVideo' muted></video>
-								<video id='remoteVideo' autoplay></video>
+							<div class="ceneter" id='videos'>
+						    <!-- <img class="center" style="width: 800px; height: 300px;" src="img/placeholder.jpg" class="thumbnail"> -->
+								<video class="center" id='localVideo' muted></video>
+								<!-- <video style = "display:none" id='localVideo' muted></video> -->
+								<!-- <video id='remoteVideo' autoplay></video> -->                
 							</div>
 						</div>
 						<div class = "overlay">
@@ -179,7 +168,7 @@
 		<footer>
 			<div class="container">
 				<p>
-					&copy; 2013 MobileNewsNow, Inc. All Rights Reserved.
+					&copy; 2013 SourceReporter, Inc. All Rights Reserved.
 				</p>
 			</div>
 		</footer>

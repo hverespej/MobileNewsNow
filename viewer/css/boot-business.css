@@ -21,13 +21,9 @@ margin-bottom: 10px;
 padding-bottom: 0px !important;
 }
 @media (max-width: 800px) {
-    iframe {
-        width: 100%;
-    }
-    .main-video iframe {
-        width: 100%;
-        height: 250px;
-    }
+    iframe { width: 100%; }
+    .main-video iframe { width: 100%; height: 250px; }
+    .main-video video { width: 100%; height: 250px; }
 }
 
 body {
