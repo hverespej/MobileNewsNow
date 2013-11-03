@@ -516,6 +516,10 @@ cite {
 .text-success {
   color: #468847;
 }
+
+.caption h3{ margin: 20px 0 3px;}
+
+
 h1,
 h2,
 h3,
