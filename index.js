@@ -2,6 +2,7 @@ var express = require('express')
 var app = express();
 
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use('/viewer', express.static(__dirname + '/viewer'));
 app.use(express.static(__dirname + '/app'));
 
 var server = require('http').createServer(app);
