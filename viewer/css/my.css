@@ -64,7 +64,6 @@ video{
 	right: 50px;
 	font-size: 28px;
 	font-weight: bolder;
-	opacity: 0.8;
 }
 
 .live-notice-dot {
@@ -83,12 +82,12 @@ video{
 
 .blinking {
 	animation-name: blinker;
-	animation-duration: 3s;
+	animation-duration: 2s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 
 	-webkit-animation-name: blinker;
-	-webkit-animation-duration: 3s;
+	-webkit-animation-duration: 2s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
 }

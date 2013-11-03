@@ -52,6 +52,11 @@
 	width: 200px;
 	height: 200px;
 	background-color: #000055;
+	overflow: hidden
+}
+
+.poppanel-content-fakeentry img{
+	height: 100%;
 }
 
 .poppanel-tab {
