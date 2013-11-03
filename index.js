@@ -25,6 +25,20 @@ app.post('/uploadVideo', function(req, resp) {
 	fs.writeFileSync(recFolder + '/recorded.json', JSON.stringify(data));
 });
 
+app.get('/profile', function(req, resp) {
+	var request = require('request');
+	request({
+			url: 'https://testapi.ark.com/email/' + req.query.name,
+			headers: {
+				api_token: '04b2d11f-0c99-496e-b06a-175dbe81c304'
+			}
+		},
+		function(err, response, body) {
+			if (err) throw err;
+			res.send(response);
+		});
+});
+
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 

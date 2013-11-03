@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "start" : "app/index.js"
+    "start": "app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "express": "~3.4.4",
-    "socket.io": "~0.9.16"
+    "socket.io": "~0.9.16",
+    "request": "~2.27.0"
   }
 }
