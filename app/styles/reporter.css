@@ -11,3 +11,24 @@ body{
 #localVideo{
 	width: 100%;
 }
+
+.poppanel{
+	position: absolute;
+	width: 1115px;
+	top: 17px;
+	height: 689px;
+	margin: 0;
+	color: black;
+	opacity: 0.7;
+}
+
+.info{
+    padding: 47px 0 0 90px;
+	
+}
+
+.poppanel span.plabel {
+	display: block;
+	color: white;
+	font-size: 30px;
+}

@@ -1,3 +1,8 @@
+/*TODO DOwnload this font instead of linking it*/
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
 /* Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml */
 .content-container-tall {
 	width: 720px;
