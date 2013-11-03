@@ -15,6 +15,7 @@
     <link href="css/font-awesome-ie7.css" rel="stylesheet">
     <!-- MobileNewsNow theme -->
     <link href="css/boot-business.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script> -->
@@ -101,9 +102,20 @@
             <!-- <img class="center" src="img/placeholder.jpg" class="thumbnail"> -->
             <div class="main-video">
               <div id='videos'>
-                <video style = "display:none" id='localVideo' autoplay muted></video>
+                <video style = "display:none" id='localVideo' muted></video>
                 <video id='remoteVideo' autoplay></video>
               </div>
+            </div>
+            <div class = "overlay">
+              <div class="overlay-person">
+                on the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
+              </div>
+              <div class="overlay-headline">
+               Breaking News
+              </div>
+              <div class="overlay-tag">
+                #SourceReporter
+              </div> 
             </div>
           </div>
         </div>
@@ -179,5 +191,12 @@
       <script src="/socket.io/socket.io.js"></script>
       <script src='/scripts/adapter.js'></script>
       <script src='/scripts/reporter.js'></script>
+      <script>
+        socket.on('message', function(message) {
+          if (message.type == 'overlay'){
+            $('.' + message.className).html(message.content);
+          }
+        });
+      </script>
   </body>
 </html>

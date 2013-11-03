@@ -73,7 +73,7 @@ body{
 	border-radius: 50%;
 }
 
-.overlay-headline {
+.overlay-person {
 	background-color:#E33C44;
 	position: absolute;
 	height: 63px;
@@ -85,7 +85,7 @@ body{
 	opacity: 0.7;
 }
 
-.overlay-subline {
+.overlay-headline {
 	position: absolute;
 	height: 82px;
 	width: 979px;
