@@ -49,6 +49,7 @@
 
 #videos{
 	width: 640px;
+	overflow: hidden;
 }
 
 video{
