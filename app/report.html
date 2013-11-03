@@ -29,8 +29,8 @@
 				style="background-image:url('/images/btn-play-small.png');"
 				onclick="swapToggleButtonImg();">
 			</div>
-			<div class="poppanel hide">
-				<div class="poppanel-tab tab-index-1">
+			<div class="poppanel">
+				<div class="poppanel-tab tab-index-1" onclick="togglePopPanel();">
 					<span class="tab-icon glyphicon glyphicon-th"></span>
 				</div>
 				<div class="poppanel-content">
@@ -71,8 +71,6 @@
 						</div>
 					</div>
 				</div> <!-- end "poppanel-content" -->
-			</div> <!-- end "poppanel" -->
-			<div class="poppanel">
 				<div class="poppanel-tab tab-index-2">
 					<span class="tab-icon glyphicon glyphicon-edit"></span>
 				</div>
@@ -108,6 +106,13 @@
 					$(".toggle-button").css("background-image", "url('/images/btn-stop-small.png')");
 				} else {
 					$(".toggle-button").css("background-image", "url('/images/btn-play-small.png')");
+				}
+			}
+			function togglePopPanel() {
+				if ($(".poppanel").hasClass("poppanel-open")) {
+					$(".poppanel").removeClass("poppanel-open");
+				} else {
+					$(".poppanel").addClass("poppanel-open");
 				}
 			}
 		</script>

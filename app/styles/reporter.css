@@ -11,9 +11,15 @@
 	position: absolute;
 	width: 1000px;
 	top: 0px;
-	left: 0px;
+	left: -850px;
 	height: 720px;
 	color: #ffffff;
+	transition: left 1s ease;
+}
+
+.poppanel-open {
+	left: 0px;
+	transition: all 1s ease;
 }
 
 .poppanel-content {
