@@ -183,31 +183,51 @@
       <script src='/scripts/reporter.js'></script>
       <script>
       var count = 0;
-      var urls = [];
-      $.getJSON('/recorded_videos/recorded.json', function(data){
-        urls = data;
-        document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+      var videos = [];
+      $.getJSON('/recorded_videos/recorded.json', function(data) {
+        videos = data;
+        drawLocalVideo();
       });
-      document.getElementById('remoteVideo').addEventListener('ended', function(){
-          console.log('Video ended, playing next');
-          document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+
+      function getProfile(email) {
+        if (email) {
+          $.getJSON('/profile?email=' + email, function(data) {
+            console.log(data);
+          });
+        }
+      }
+
+      function drawLocalVideo() {
+        count = (count + 1) % videos.length;
+        var vdo = videos[count];
+        document.getElementById('remoteVideo').src = vdo.loc;
+        if (vdo.meta) {
+          for (var key in vdo.meta) {
+            $('.' + key).html(vdo.meta[key]);
+          }
+        }
+      }
+
+      document.getElementById('remoteVideo').addEventListener('ended', function() {
+        console.log('Video ended, playing next');
+        drawLocalVideo();
+
       });
       socket.on('message', function(message) {
         if (message.type == 'overlay') {
           $('.' + message.className).html(message.content);
         }
 
+        if (message === 'bye' || (message.type == 'live' && message.state == false)) {
+          console.log('Reporter has left the session');
+          drawLocalVideo();
+        }
 
-				if (message === 'bye' || (message.type == 'live' && message.state == false)) {
-					console.log('Reporter has left the session');
-					document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
-				}
-
-				if (message.type == 'live' && message.state == true) {
-					console.log('bringing back remote video');
-					attachMediaStream(remoteVideo, remoteStream);
-				}
-			});
+        if (message.type == 'live' && message.state == true) {
+          console.log('bringing back remote video');
+          attachMediaStream(remoteVideo, remoteStream);
+        }
+      });
 		</script>
 	</body>
 </html>
