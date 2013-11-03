@@ -31,7 +31,7 @@ app.post('/uploadVideo', function(req, resp) {
 app.get('/profile', function(req, resp) {
 	var request = require('request');
 	request({
-			url: 'https://testapi.ark.com/email/' + req.query.name,
+			url: 'https://testapi.ark.com/email/' + req.query.email,
 			headers: {
 				api_token: '04b2d11f-0c99-496e-b06a-175dbe81c304'
 			}
