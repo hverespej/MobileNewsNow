@@ -16,7 +16,7 @@
 				<video style = "display:none" id='remoteVideo' muted></video>
 			</div>
 			<div class="overlay-person" onclick="editHeadline();">
-				<span>on the scene: </span><b class = "overlay-name">Jim Sanders</b>
+				<span>On the scene: </span><b class = "overlay-name">Jim Sanders</b>
 			</div>
 			<div class="overlay-headline" onclick="editSubline();">
 				Breaking News
@@ -30,7 +30,7 @@
 				onclick="swapToggleButtonImg();">
 			</div>
 			<div class="poppanel">
-				<div class="poppanel-tab tab-index-1">
+				<div class="poppanel-tab tab-index-1 tab-selected">
 					<span class="tab-icon glyphicon glyphicon-th"></span>
 				</div>
 				<div class="poppanel-content content-index-1">
@@ -121,8 +121,12 @@
 				}
 
 				if (panelIndex != null) {
-					$(".poppanel-content").addClass("hide");
+					var targetTab = ".tab-index-" + panelIndex;
+					$(".poppanel-tab").removeClass("tab-selected");
+					$(targetTab).addClass("tab-selected");
+
 					var targetContent = ".content-index-" + panelIndex;
+					$(".poppanel-content").addClass("hide");
 					$(targetContent).removeClass("hide");
 
 					if (_lastPanelIndex == null) {

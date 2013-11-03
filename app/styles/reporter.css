@@ -14,13 +14,11 @@
 	left: -850px;
 	height: 720px;
 	color: #ffffff;
-	opacity: 0.5;
 	transition: left 1s ease;
 }
 
 .poppanel-open {
 	left: 0px;
-	opacity: 0.5;
 	transition: all 1s ease;
 }
 
@@ -45,6 +43,10 @@
 	width: 150px;
 	height: 150px;
 	left: 850px;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.tab-selected {
 	background-color: rgba(0,0,0,0.5);
 }
 
