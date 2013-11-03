@@ -30,10 +30,10 @@
 				onclick="swapToggleButtonImg();">
 			</div>
 			<div class="poppanel">
-				<div class="poppanel-tab tab-index-1" onclick="togglePopPanel();">
+				<div class="poppanel-tab tab-index-1">
 					<span class="tab-icon glyphicon glyphicon-th"></span>
 				</div>
-				<div class="poppanel-content">
+				<div class="poppanel-content content-index-1">
 					<!-- TODO: These are styled in a dirty way... this should be cleaned up -->
 					<h1 style="margin:0;">Template Gallery</h1>
 					<br />
@@ -74,7 +74,7 @@
 				<div class="poppanel-tab tab-index-2">
 					<span class="tab-icon glyphicon glyphicon-edit"></span>
 				</div>
-				<div class="poppanel-content">
+				<div class="poppanel-content content-index-2">
 					<br />
 					<span class="plabel poppanel-label">reporter name</span>
 					<input type="text" class="poppanel-input" data-cl = 'overlay-name' id="inputReporterName" value="Jim Sanders"/>
@@ -108,13 +108,34 @@
 					$(".toggle-button").css("background-image", "url('/images/btn-play-small.png')");
 				}
 			}
-			function togglePopPanel() {
-				if ($(".poppanel").hasClass("poppanel-open")) {
-					$(".poppanel").removeClass("poppanel-open");
-				} else {
-					$(".poppanel").addClass("poppanel-open");
+
+			var _lastPanelIndex = null;
+			$(".poppanel-tab").click(function(event) {
+				var classes = $(this).attr("class").split(/\s+/);
+				var panelIndex = null;
+				for (var i = 0; i < classes.length; i++) {
+					if (classes[i].indexOf("tab-index-") == 0) {
+						panelIndex = classes[i].substring(10);
+						break;
+					}
 				}
-			}
+
+				if (panelIndex != null) {
+					$(".poppanel-content").addClass("hide");
+					var targetContent = ".content-index-" + panelIndex;
+					$(targetContent).removeClass("hide");
+
+					if (_lastPanelIndex == null) {
+						$(".poppanel").addClass("poppanel-open");
+						_lastPanelIndex = panelIndex;
+					} else if (_lastPanelIndex === panelIndex) {
+						$(".poppanel").removeClass("poppanel-open");
+						_lastPanelIndex = null;
+					} else {
+						_lastPanelIndex = panelIndex;
+					}
+				}
+			});
 		</script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script src='scripts/adapter.js'></script>

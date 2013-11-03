@@ -14,11 +14,13 @@
 	left: -850px;
 	height: 720px;
 	color: #ffffff;
+	opacity: 0.5;
 	transition: left 1s ease;
 }
 
 .poppanel-open {
 	left: 0px;
+	opacity: 0.5;
 	transition: all 1s ease;
 }
 
