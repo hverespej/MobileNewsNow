@@ -1,13 +1,29 @@
-.overlay-person{
-
+.overlay-reporter {
+	position: absolute;
+	width: 50%;
+	bottom: 90px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0px;
+	background-color:rgba(227,60,68,0.5);
 }
 
-.overlay-headline{
-
+.overlay-headline {
+	position: absolute;
+	width: 65%;
+	bottom: 40px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0px;
+	background-color:rgba(227,60,68,0.5);
 }
 
-.overlay-tag{
-
+.overlay-tag {
+	position: absolute;
+	bottom: 10px;
+	left:20px;
 }
 
 #videos{
