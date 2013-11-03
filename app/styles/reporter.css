@@ -88,3 +88,25 @@ input{
 	width: 100%;
 }
 
+.live-notice-container {
+	position: absolute;
+	top: 60px;
+	right: 100px;
+	font-size: 28px;
+	font-weight: bolder;
+	opacity: 0.7;
+}
+
+.live-notice-dot {
+	display: inline-block;
+	background-color: #E33C44;
+	height: 20px;
+	width: 20px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.live-notice-text {
+	color: #E33C44;
+}

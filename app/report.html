@@ -15,6 +15,11 @@
 				<video id='localVideo' autoplay muted></video>
 				<video style = "display:none" id='remoteVideo' muted></video>
 			</div>
+			<div class="live-notice-container blinking hide">
+				<span class="live-notice-dot"></span>
+				<span class="live-notice-text">Live</span>
+			</div>
+			<div class="overlay-text">Live</div>
 			<div class="overlay-person" onclick="editHeadline();">
 				<span>On the scene: </span><b class = "overlay-name">Jim Sanders</b>
 			</div>
@@ -27,7 +32,7 @@
 			<div
 				class="toggle-button"
 				style="background-image:url('/images/btn-play-small.png');"
-				onclick="swapToggleButtonImg();">
+				onclick="toggleRecordButton();">
 			</div>
 			<div class="poppanel">
 				<div class="poppanel-tab tab-index-1 tab-selected">
@@ -100,12 +105,14 @@
 		<script src="/bower_components/jquery/jquery.min.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-			function swapToggleButtonImg() {
+			function toggleRecordButton() {
 				var currImage = $(".toggle-button").css("background-image");
 				if (currImage.indexOf("play") > 0) {
 					$(".toggle-button").css("background-image", "url('/images/btn-stop-small.png')");
+					$(".live-notice-container").removeClass("hide");
 				} else {
 					$(".toggle-button").css("background-image", "url('/images/btn-play-small.png')");
+					$(".live-notice-container").addClass("hide");
 				}
 			}
 

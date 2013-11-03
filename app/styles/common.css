@@ -99,15 +99,41 @@ body{
 }
 
 .overlay-tag{
-    position: absolute;
-	
-    color: white;
-    top: 650px;
-    padding: 0 0 0 54px;
-    font-size: 28px;
-    font-weight: bolder;
+	position: absolute;
+	color: white;
+	top: 650px;
+	padding: 0 0 0 54px;
+	font-size: 28px;
+	font-weight: bolder;
 }
 
-.overlay-text {
+.blinking {
+	animation-name: blinker;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+	0% { opacity: 0.0; }
+	50% { opacity: 0.7; }
+	100% { opacity: 0.0; }
+}
+
+@-webkit-keyframes blinker {  
+	0% { opacity: 0.0; }
+	50% { opacity: 0.7; }
+	100% { opacity: 0.0; }
+}
+
+@keyframes blinker {  
+	0% { opacity: 0.0; }
+	50% { opacity: 0.7; }
+	100% { opacity: 0.0; }
 }
 
