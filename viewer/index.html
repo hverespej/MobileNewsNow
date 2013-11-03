@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="SourceReporter | Short description about company">
-		<meta name="author" content="Your name">
-		<title>SourceReporter | Mobile News Now</title>
+		<meta name="description" content="SourceReporter">
+		<title>SourceReporter</title>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<!-- Bootstrap responsive -->
@@ -40,7 +39,20 @@
               c.latitude = 47.55 + 0.0950*((2*Math.random()-1)+(2*Math.random()-1)+(2*Math.random()-1));
               c.longitude = -122.320 + 0.030*((2*Math.random()-1)+(2*Math.random()-1)+(2*Math.random()-1));
 				      // Add a pin to the center of the map
-              var pin = new Microsoft.Maps.Pushpin(c, {draggable: false});
+              var pin;
+              var r = Math.random();
+              if (r < 0.3)
+              {
+                  pin = new Microsoft.Maps.Pushpin(c, {draggable: false, icon: '/viewer/img/mapflags-15.png'});
+              }
+              else if ( r < 0.6)
+              {
+                  pin = new Microsoft.Maps.Pushpin(c, {draggable: false, icon: '/viewer/img/mapflags-17.png'});
+              }
+              else 
+              {
+                  pin = new Microsoft.Maps.Pushpin(c, {draggable: false, icon: '/viewer/img/mapflags-16.png'});
+              }
 				      map.entities.push(pin);
           }
 			}
@@ -85,26 +97,15 @@
 		<div style="margin-top:-20px;" class="content">
 			<div class="slider">
 				<div class="container-fluid">
-					<div id="heroSlider" class="center">
-						<!-- <img class="center" src="img/placeholder.jpg" class="thumbnail"> -->
-						<div class="main-video">
-							<div class="ceneter" id='videos'>
-						    <!-- <img class="center" style="width: 800px; height: 300px;" src="img/placeholder.jpg" class="thumbnail"> -->
-								<video class="center" id='localVideo' muted></video>
-								<!-- <video style = "display:none" id='localVideo' muted></video> -->
-								<!-- <video id='remoteVideo' autoplay></video> -->                
+					<div id="heroSlider" class="playback-wrapper">
+						<div class="playback-container">
+							<div class="overlay-reporter">
+								On the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
 							</div>
-						</div>
-						<div class = "overlay">
-							<div class="overlay-person">
-								on the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
-							</div>
-							<div class="overlay-headline">
-							Breaking News
-							</div>
-							<div class="overlay-tag">
-								#SourceReporter
-							</div> 
+							<div class="overlay-headline">Breaking News</div>
+							<div class="overlay-tag">#SourceReporter</div> 
+							<video style = "display:none" id='localVideo' muted></video>
+							<video id='remoteVideo' autoplay></video>
 						</div>
 					</div>
 				</div>
@@ -177,32 +178,56 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/boot-business.js"></script>
 
-		<script src="/socket.io/socket.io.js"></script>
-		<script src='/scripts/adapter.js'></script>
-		<script src='/scripts/reporter.js'></script>
-		<script>
-			var count = 0;
-			var urls = [];
-			$.getJSON('/recorded_videos/recorded.json', function(data){
-				urls = data;
-				document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
-			});
+      <script src="/socket.io/socket.io.js"></script>
+      <script src='/scripts/adapter.js'></script>
+      <script src='/scripts/reporter.js'></script>
+      <script>
+      var count = 0;
+      var videos = [];
+      $.getJSON('/recorded_videos/recorded.json', function(data) {
+        videos = data;
+        drawLocalVideo();
+      });
 
-			socket.on('message', function(message) {
-				if (message.type == 'overlay') {
-					$('.' + message.className).html(message.content);
-				}
+      function getProfile(email) {
+        if (email) {
+          $.getJSON('/profile?email=' + email, function(data) {
+            console.log(data);
+          });
+        }
+      }
 
-				if (message === 'bye' || (message.type == 'live' && message.state == false)) {
-					console.log('Reporter has left the session');
-					document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
-				}
+      function drawLocalVideo() {
+        count = (count + 1) % videos.length;
+        var vdo = videos[count];
+        document.getElementById('remoteVideo').src = vdo.loc;
+        if (vdo.meta) {
+          for (var key in vdo.meta) {
+            $('.' + key).html(vdo.meta[key]);
+          }
+        }
+      }
 
-				if (message.type == 'live' && message.state == true) {
-					console.log('bringing back remote video');
-					attachMediaStream(remoteVideo, remoteStream);
-				}
-			});
+      document.getElementById('remoteVideo').addEventListener('ended', function() {
+        console.log('Video ended, playing next');
+        drawLocalVideo();
+
+      });
+      socket.on('message', function(message) {
+        if (message.type == 'overlay') {
+          $('.' + message.className).html(message.content);
+        }
+
+        if (message === 'bye' || (message.type == 'live' && message.state == false)) {
+          console.log('Reporter has left the session');
+          drawLocalVideo();
+        }
+
+        if (message.type == 'live' && message.state == true) {
+          console.log('bringing back remote video');
+          attachMediaStream(remoteVideo, remoteStream);
+        }
+      });
 		</script>
 	</body>
 </html>
