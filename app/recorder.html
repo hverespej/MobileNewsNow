@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<iframe name = 'frame'></iframe>
+		<div class = "fileUploadDialog">
+			<form id = "fileUploadForm" action="/uploadVideo" target = 'frame' method="post" enctype="multipart/form-data">
+				<input id = "fileUploadButton" type="file" accept="video/*;capture=camcorder" name = "video"/>
+				<input type = "submit">
+			</form>
+		</div>
+	</body>
+</html>

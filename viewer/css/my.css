@@ -9,3 +9,11 @@
 .overlay-tag{
 
 }
+
+#videos{
+	width: 640px;
+}
+
+video{
+	width: 100%;
+}

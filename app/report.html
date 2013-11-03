@@ -98,25 +98,14 @@
 			</div> <!-- end "poppanel" -->
 		</div> <!-- end "content-container-wide" -->
 
-		<iframe name = 'frame'></iframe>
-		<div class = "fileUploadDialog">
-			<form id = "fileUploadForm" action="/uploadVideo" target = 'frame' method="post" enctype="multipart/form-data">
-				<input id = "fileUploadButton" type="file" accept="video/*;capture=camcorder" name = "video"/>
-			</form>
-		</div>
-
 		<script src="/bower_components/jquery/jquery.min.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-			$('#fileUploadButton').change(function(){
-				$('#fileUploadForm')[0].submit();
-			});
-
 			$('#live').on('click',function(){
 				var state = $('#live').data('state') || false;
 				sendMessage({
 					type: 'live',
-					state: state
+					state: !state
 				});
 				$('#live').data('state', !state).toggleClass('isLive');
 				$(".live-notice-container").toggleClass("hide");
