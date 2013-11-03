@@ -1,3 +1,16 @@
+.playback-wrapper {
+	height: 366px;
+	width: 651px;
+}
+
+.playback-container {
+	width: 651px;
+	height: 366px;
+	background-color: #000000;
+	color: #ffffff;
+	position:absolute;
+}
+
 .overlay-reporter {
 	position: absolute;
 	width: 50%;
@@ -6,7 +19,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	left: 0px;
-	background-color:rgba(227,60,68,0.5);
+	background-color:rgba(227,60,68,0.7);
 }
 
 .overlay-headline {
@@ -17,7 +30,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	left: 0px;
-	background-color:rgba(227,60,68,0.5);
+	background-color:rgba(227,60,68,0.7);
 }
 
 .overlay-tag {
