@@ -213,9 +213,16 @@
         drawLocalVideo();
 
       });
+
+      var m = {
+      	'overlay-name' : 'Jim Sanders',
+      	'overlay-headline' : 'AppHack Event',
+      	'overlay-tag' : '#SourceReporter'
+      };
       socket.on('message', function(message) {
         if (message.type == 'overlay') {
-          $('.' + message.className).html(message.content);
+        	m[message.className] = message.content;
+        	$('.' + message.className).html(message.content);
         }
 
         if (message === 'bye' || (message.type == 'live' && message.state == false)) {
@@ -225,6 +232,9 @@
 
         if (message.type == 'live' && message.state == true) {
           console.log('bringing back remote video');
+          for (var key in m) {
+            $('.' + key).html(m[key]);
+          }
           attachMediaStream(remoteVideo, remoteStream);
         }
       });
