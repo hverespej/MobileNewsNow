@@ -1,13 +1,50 @@
-.overlay-person{
-
+@font-face {
+	font-family: "Raleway";
+	src: url("/viewer/font/Raleway/Raleway-Thin.otf");
 }
 
-.overlay-headline{
-
+.playback-wrapper {
+	height: 366px;
+	width: 651px;
+	font-family: "Raleway", sans-serif;
 }
 
-.overlay-tag{
+.playback-container {
+	width: 651px;
+	height: 366px;
+	background-color: #000000;
+	color: #ffffff;
+	position:absolute;
+}
 
+.overlay-reporter {
+	position: absolute;
+	width: 50%;
+	bottom: 90px;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0px;
+	background-color:rgba(227,60,68,0.7);
+}
+
+.overlay-headline {
+	position: absolute;
+	width: 65%;
+	bottom: 35px;
+	font-size: 30px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	left: 0px;
+	background-color:rgba(227,60,68,0.7);
+}
+
+.overlay-tag {
+	position: absolute;
+	bottom: 10px;
+	left:20px;
 }
 
 #videos{
