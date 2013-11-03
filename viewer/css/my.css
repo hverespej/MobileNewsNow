@@ -4,7 +4,6 @@
 }
 
 .playback-wrapper {
-	height: 366px;
 	width: 100%;
 	font-family: "Raleway", sans-serif;
 	overflow: hidden;
@@ -14,8 +13,8 @@
 	position: relative;
 	margin-left:auto;
 	margin-right:auto;
-	width: 651px;
-	height: 366px;
+	width: 850px;
+	height: 478px;
 	background-color: #000000;
 	color: #ffffff;
 }
