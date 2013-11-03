@@ -1,3 +1,4 @@
+/* Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml */
 .content-container-tall {
 	width: 720px;
 	height: 1280px;
@@ -6,6 +7,7 @@
 	position: absolute;
 }
 
+/* Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml */
 .content-container-wide {
 	width: 1280px;
 	height: 720px;
@@ -78,3 +80,7 @@ button {
 	background-color: rgba(0,0,0,0.2);
 	top: 570px;
 }
+
+.overlay-text {
+}
+

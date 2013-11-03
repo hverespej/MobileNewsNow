@@ -10,12 +10,11 @@
 		<link href="/styles/reporter.css" rel="stylesheet" media="screen"/>
 	</head>
 	<body>
-		<!-- Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml -->
 		<div class="content-container-wide">
-			<div id='videos'>
-      			<video id='localVideo' autoplay muted></video>
-      			<video style = "display:none" id='remoteVideo' autoplay></video>
-    		</div>
+			<div id='videos' style="position:absolute;left:0px;top:0px;width:100%;height:100%;background-color:#550000;">
+				<video id='localVideo' autoplay muted style="width:100%;height:100%;"></video>
+				<video style = "display:none" id='remoteVideo' autoplay></video>
+			</div>
 			<div class="overlay-headline" onclick="editHeadline();">
 				Breaking News!
 			</div>
