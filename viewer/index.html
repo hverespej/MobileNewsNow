@@ -204,10 +204,14 @@
             $('.' + message.className).html(message.content);
           }
 
-          
-          if (message === 'bye'){
+          if (message === 'bye' || (message.type == 'live' && message.state == false)){
             console.log('Reporter has left the session');
             document.getElementById('remoteVideo').src = urls[count++ % urls.length];
+          }
+          
+          if (message.type == 'live' && message.state == true){
+            console.log('bringing back remote video');
+            attachMediaStream(remoteVideo, remoteStream);
           }
         });
       </script>

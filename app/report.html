@@ -29,10 +29,7 @@
 			<div class="overlay-tag">
 				#SourceReporter
 			</div>
-			<div
-				class="toggle-button"
-				style="background-image:url('/images/btn-play-small.png');"
-				onclick="toggleRecordButton();">
+			<div id = "live" class="toggle-button">
 			</div>
 			<div class="poppanel">
 				<div class="poppanel-tab tab-index-1 tab-selected">
@@ -105,16 +102,18 @@
 		<script src="/bower_components/jquery/jquery.min.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-			function toggleRecordButton() {
-				var currImage = $(".toggle-button").css("background-image");
-				if (currImage.indexOf("play") > 0) {
-					$(".toggle-button").css("background-image", "url('/images/btn-stop-small.png')");
-					$(".live-notice-container").removeClass("hide");
-				} else {
-					$(".toggle-button").css("background-image", "url('/images/btn-play-small.png')");
-					$(".live-notice-container").addClass("hide");
-				}
-			}
+			$('#live').on('click',function(){
+				var state = $('#live').data('state') || false;
+				sendMessage({
+					type: 'live',
+					state: state
+				});
+				$('#live').data('state', !state).toggleClass('isLive');
+			});
+
+			window.setTimeout(function(){
+				$('#live').click();
+			},4000);
 
 			var _lastPanelIndex = null;
 			$(".poppanel-tab").click(function(event) {

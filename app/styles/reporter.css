@@ -3,6 +3,14 @@
 	height: 100%;
 }
 
+#live{
+	background-image:url('/images/btn-play-small.png');
+}
+
+#live.isLive{
+	background-image:url('/images/btn-pause-small.png');
+}
+
 #localVideo{
 	width: 100%;
 }
