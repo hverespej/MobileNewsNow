@@ -34,8 +34,9 @@ app.get('/profile', function(req, resp) {
 			}
 		},
 		function(err, response, body) {
+			console.log('Got response', body)
 			if (err) throw err;
-			res.send(response);
+			resp.send(body);
 		});
 });
 
