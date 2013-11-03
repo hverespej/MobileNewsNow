@@ -55,6 +55,16 @@
               }
 				      map.entities.push(pin);
           }
+          for (var i=0;i<10;i++)
+          {
+              var c = map.getCenter();
+              c.latitude = 47.604208 + 0.00950*((2*Math.random()-1)+(2*Math.random()-1)+(2*Math.random()-1));
+              c.longitude = -122.317 + 0.0090*((2*Math.random()-1)+(2*Math.random()-1)+(2*Math.random()-1));
+				      // Add a pin to the center of the map
+              var pin = new Microsoft.Maps.Pushpin(c, {draggable: false, icon: '/viewer/img/mapflags-13.png'});
+              Microsoft.Maps.Events.addHandler(pin, 'click', function(){window.location.assign("#")});
+				      map.entities.push(pin);
+          }
 			}
 		</script>
 	</head>
@@ -161,7 +171,7 @@
 <iframe height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=&amp;aq=&amp;sll=47.606163,-122.332077&amp;sspn=0.281937,0.676346&amp;t=m&amp;ie=UTF8&amp;ll=47.614033,-122.286072&amp;spn=0.281894,0.676346&amp;z=11&amp;output=embed&amp;q=47.606163,-122.332077&amp;q=47.606163,-122.332080"></iframe></div> -->
 <!-- <br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=&amp;aq=&amp;sll=47.606163,-122.332077&amp;sspn=0.281937,0.676346&amp;t=m&amp;ie=UTF8&amp;ll=47.614033,-122.286072&amp;spn=0.281894,0.676346&amp;z=11" style="color:#0000FF;text-align:left">View Larger Map</a></small> -->
 		</div>
-		<div class="center"><a style="font-size: 30px;" class="center btn btn-primary btn-large" href="/client.html">Share your story!</a></div>
+		<div class="center"><a style="font-size: 30px;" class="center btn btn-primary btn-large" href="#">Share your story!</a></div>
 		<br/>
 		</div>
 		<!-- End: MAIN CONTENT -->
@@ -213,9 +223,16 @@
         drawLocalVideo();
 
       });
+
+      var m = {
+      	'overlay-name' : 'Jim Sanders',
+      	'overlay-headline' : 'AppHack Event',
+      	'overlay-tag' : '#SourceReporter'
+      };
       socket.on('message', function(message) {
         if (message.type == 'overlay') {
-          $('.' + message.className).html(message.content);
+        	m[message.className] = message.content;
+        	$('.' + message.className).html(message.content);
         }
 
         if (message === 'bye' || (message.type == 'live' && message.state == false)) {
@@ -225,6 +242,9 @@
 
         if (message.type == 'live' && message.state == true) {
           console.log('bringing back remote video');
+          for (var key in m) {
+            $('.' + key).html(m[key]);
+          }
           attachMediaStream(remoteVideo, remoteStream);
         }
       });

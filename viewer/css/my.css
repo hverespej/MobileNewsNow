@@ -49,6 +49,11 @@
 	left:20px;
 }
 
+#videos{
+	width: 640px;
+	overflow: hidden;
+}
+
 video{
 	width: 100%;
 }
