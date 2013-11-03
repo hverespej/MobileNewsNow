@@ -241,6 +241,7 @@
 
         if (message === 'bye' || (message.type == 'live' && message.state == false)) {
           console.log('Reporter has left the session');
+          $('#liveVide').hide();
           drawLocalVideo();
         }
 
@@ -249,6 +250,7 @@
           for (var key in m) {
             $('.' + key).html(m[key]);
           }
+          $('#liveVide').show();
           attachMediaStream(remoteVideo, remoteStream);
         }
       });
