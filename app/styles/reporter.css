@@ -61,19 +61,6 @@
 	padding: 0 0 0 22px;
 }
 
-.reporter{
-		margin: 0 0 5px 0;
-}
-
-.onscene{
-	width: 366px;
-	margin: 0 26px 0 0;
-}
-
-.onscenename{
-	width: 488px;
-}
-
 input{
 	border: 3px solid #515151;
 	height: 72px;
@@ -83,40 +70,11 @@ input{
 	background: #777777;
 }
 
-.headline{
-    margin: 17px 0 1px 0;
-
+.poppanel-input {
+	width: 100%;
 }
 
-.headlineVal{
-    height: 88px;
-
-    width: 880px;
-    font-size: 50px;
-}
-
-.adTags{
-    margin: 43px 0 3px 0;
-    margin: 1;
-
-}
-
-.location{
-    margin: 26px 0 6px 0;
-
-}
-
-.locationlive{
-    font-size: 40px;
-
-    color: white;
-    padding: 1px 0 0 22px;
-    vertical-align: baseline;
-}
-
-.locationVal{
-    width: 360px;
-	
-    margin: 0 0 0 0px;
+.poppanel-label {
+	width: 100%;
 }
 
