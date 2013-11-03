@@ -3,6 +3,10 @@
 	height: 100%;
 }
 
+.fileUploadDialog{
+	position: absolute;
+}
+
 #live{
 	background-image:url('/images/btn-play-small.png');
 }

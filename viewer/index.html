@@ -172,7 +172,7 @@
 <!-- <br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=&amp;aq=&amp;sll=47.606163,-122.332077&amp;sspn=0.281937,0.676346&amp;t=m&amp;ie=UTF8&amp;ll=47.614033,-122.286072&amp;spn=0.281894,0.676346&amp;z=11" style="color:#0000FF;text-align:left">View Larger Map</a></small> -->
     </div>
     <div class="center"><a style="font-size: 30px;" class="center btn btn-primary btn-large" href="/client.html">Share your story!</a></div>
-    <br>
+    <br/>
     </div>
     <!-- End: MAIN CONTENT -->
     <!-- Start: FOOTER -->
@@ -193,27 +193,27 @@
       <script src='/scripts/reporter.js'></script>
       <script>
       var count = 0;
-          var urls = [
-            'http://r6---sn-p5qlsu7k.c.youtube.com/videoplayback?ip=50.46.157.70&key=yt5&sver=3&expire=1383479900&itag=43&source=youtube&fexp=900206%2C930102%2C916612%2C919119%2C924616%2C907231%2C907240&upn=L57uUsHjQt8&id=72a62e8ebb0aa70d&ratebypass=yes&sparams=cp%2Cid%2Cip%2Cipbits%2Citag%2Cratebypass%2Csource%2Cupn%2Cexpire&ipbits=8&cp=U0hXSFRSV19FSkNON19MTEFKOm4wYS0yRFdDeEY2&cpn=TeRgMXkh2jJpfT9p&signature=6BB798E776A68E4E6691AE8C0979FC3ECF31D5CC.2E01BDA261A184DCECC27FA7CDD0599C1E76ACA9&ptk=youtube_none&pltype=contentugc&redirect_counter=2&cms_redirect=yes&ms=tsu&mt=1383456604&mv=m',
-            'http://r5---sn-4gvoupxg-2qme.c.youtube.com/videoplayback?source=youtube&sparams=cp%2Cid%2Cip%2Cipbits%2Citag%2Cratebypass%2Csource%2Cupn%2Cexpire&expire=1383480276&sver=3&mv=m&mt=1383456690&ipbits=8&ratebypass=yes&itag=43&fexp=900206%2C930102%2C916612%2C919119%2C924616%2C907231%2C907240&ms=au&id=ad4fdd212055c560&ip=50.46.157.70&key=yt5&cp=U0hXSFRTTl9MUENON19MTVJDOnQwYS0yRFhUcU0y&upn=HT02yUmuytw&cpn=kHsq_QxfyEQz7rDI&signature=2CA7C466530BE4BE9319FC0F6F2068C65B36EC21.61F31C61A2EBDF3BA62F3168379FC9C2A89265B8&ptk=youtube_none&pltype=contentugc'
-          ];
+      var urls = [];
+      $.getJSON('/recorded_videos/recorded.json', function(data){
+        urls = data;
+        document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+      });
 
-        document.getElementById('remoteVideo').src = urls[count++ % urls.length];
-        socket.on('message', function(message) {
-          if (message.type == 'overlay'){
-            $('.' + message.className).html(message.content);
-          }
+      socket.on('message', function(message) {
+        if (message.type == 'overlay') {
+          $('.' + message.className).html(message.content);
+        }
 
-          if (message === 'bye' || (message.type == 'live' && message.state == false)){
-            console.log('Reporter has left the session');
-            document.getElementById('remoteVideo').src = urls[count++ % urls.length];
-          }
-          
-          if (message.type == 'live' && message.state == true){
-            console.log('bringing back remote video');
-            attachMediaStream(remoteVideo, remoteStream);
-          }
-        });
+        if (message === 'bye' || (message.type == 'live' && message.state == false)) {
+          console.log('Reporter has left the session');
+          document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+        }
+
+        if (message.type == 'live' && message.state == true) {
+          console.log('bringing back remote video');
+          attachMediaStream(remoteVideo, remoteStream);
+        }
+      });
       </script>
   </body>
 </html>
