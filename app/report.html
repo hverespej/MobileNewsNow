@@ -120,11 +120,8 @@
 					state: state
 				});
 				$('#live').data('state', !state).toggleClass('isLive');
+				$(".live-notice-container").toggleClass("hide");
 			});
-
-			window.setTimeout(function(){
-				$('#live').click();
-			},4000);
 
 			var _lastPanelIndex = null;
 			$(".poppanel-tab").click(function(event) {
