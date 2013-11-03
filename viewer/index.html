@@ -1,219 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MobileNewsNow | Short description about company">
-    <meta name="author" content="Your name">
-    <title>MobileNewsNow | Mobile News Now</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- Bootstrap responsive -->
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <!-- Font awesome - iconic font with IE7 support --> 
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/font-awesome-ie7.css" rel="stylesheet">
-    <!-- MobileNewsNow theme -->
-    <link href="css/boot-business.css" rel="stylesheet">
-    <link href="css/my.css" rel="stylesheet"/>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="MobileNewsNow | Short description about company">
+		<meta name="author" content="Your name">
+		<title>MobileNewsNow | Mobile News Now</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<!-- Bootstrap responsive -->
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<!-- Font awesome - iconic font with IE7 support --> 
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/font-awesome-ie7.css" rel="stylesheet">
+		<!-- MobileNewsNow theme -->
+		<link href="css/boot-business.css" rel="stylesheet">
+		<link href="css/my.css" rel="stylesheet"/>
 
-    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script> -->
-      <script type="text/javascript">
-            function GetMap()
-      {  
-               var map = null;
-               var mapOptions = {
-                  credentials: "AnqYX-naz_bVzPIDo3wZmRUfzAdvWPj7x40sxdRYVRKJvXW9pOXmrpQMhd5nph4C",
-                  center: new Microsoft.Maps.Location(47.6, -122.332),
-                  mapTypeId: Microsoft.Maps.MapTypeId.road,
-                  zoom: 12,
-                  showScalebar: false,
-                  disableBirdseye: true
-               }
-               var map = new Microsoft.Maps.Map(document.getElementById("myMap"), mapOptions);
+		<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+		<script type="text/javascript">
+			function GetMap()
+			{	
+				var map = null;
+				var mapOptions = {
+					credentials: "AnqYX-naz_bVzPIDo3wZmRUfzAdvWPj7x40sxdRYVRKJvXW9pOXmrpQMhd5nph4C",
+					center: new Microsoft.Maps.Location(47.6, -122.332),
+					mapTypeId: Microsoft.Maps.MapTypeId.road,
+					zoom: 12,
+					showScalebar: false,
+					disableBirdseye: true,
+					showDashboard: false
+				}
+				var map = new Microsoft.Maps.Map(document.getElementById("myMap"), mapOptions);
 
-               // Retrieve the location of the map center           
+				// Retrieve the location of the map center					
 
-               var c1 = map.getCenter();
-               c1.latitude = 47.630;
-               c1.longitude = -122.312;
-               var c2 = map.getCenter();
-               c2.latitude = 47.614;
-               c2.longitude = -122.361;
-               var c3 = map.getCenter();
-               c3.latitude = 47.618;
-               c3.longitude = -122.334;
-               
-               // Add a pin to the center of the map
-               var pin = new Microsoft.Maps.Pushpin(c1, {draggable: false}); 
-               var pin2 = new Microsoft.Maps.Pushpin(c2, {draggable: false}); 
-               var pin3 = new Microsoft.Maps.Pushpin(c3, {draggable: false});
+				var c1 = map.getCenter();
+				c1.latitude = 47.630;
+				c1.longitude = -122.312;
+				var c2 = map.getCenter();
+				c2.latitude = 47.614;
+				c2.longitude = -122.361;
+				var c3 = map.getCenter();
+				c3.latitude = 47.618;
+				c3.longitude = -122.334;
+				
+				// Add a pin to the center of the map
+				var pin = new Microsoft.Maps.Pushpin(c1, {draggable: false}); 
+				var pin2 = new Microsoft.Maps.Pushpin(c2, {draggable: false}); 
+				var pin3 = new Microsoft.Maps.Pushpin(c3, {draggable: false});
 
-               // Add a handler to the pushpin drag
-               //Microsoft.Maps.Events.addHandler(pin, 'mouseup', DisplayLoc);
+				// Add a handler to the pushpin drag
+				//Microsoft.Maps.Events.addHandler(pin, 'mouseup', DisplayLoc);
 
-               map.entities.push(pin);
-               map.entities.push(pin2);
-               map.entities.push(pin3);
-            }
-      </script>
-  </head>
-  <body onload="GetMap();">
-    <header>
-      <!-- Start: Navigation wrapper -->
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a href="index.html" class="brand brand-bootbus">MobileNewsNow</a>
-            <!-- Below button used for responsive navigation -->
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Start: Primary navigation -->
-            <div class="nav-collapse collapse">        
-              <ul class="nav pull-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trending stories<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-header">Stories</li>
-                    <li><a href="product.html">Cat stuck in tree</a></li>
-                    <li><a href="product.html">Man pees in bush</a></li>
-                    <li><a href="product.html">Free Starbucks</a></li>
-                    <li><a href="all_products.html">All stories</a></li>
-                  </ul>                  
-                </li>                
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact_us.html">Contact us</a></li>
-                <li><a href="signup.html">Sign up</a></li>
-                <li><a href="signin.html">Sign in</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div style="margin-top:-20px;" class="content">
-      <div class="slider">
-        <div class="container-fluid">
-          <div id="heroSlider" class="center">
-            <!-- <img class="center" src="img/placeholder.jpg" class="thumbnail"> -->
-            <div class="main-video">
-              <div id='videos'>
-                <video style = "display:none" id='localVideo' muted></video>
-                <video id='remoteVideo' autoplay></video>
-              </div>
-            </div>
-            <div class = "overlay">
-              <div class="overlay-person">
-                on the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
-              </div>
-              <div class="overlay-headline">
-               Breaking News
-              </div>
-              <div class="overlay-tag">
-                #SourceReporter
-              </div> 
-            </div>
-          </div>
-        </div>
-        <br>
-      </div>
-      <br>
-      <!-- End: slider -->
-      <!-- Start: PRODUCT LIST -->
-        <div class="container">
-          <!-- <div class="page-header"> -->
-          <!--   <h2>Our products</h2> -->
-          <!-- </div> -->
-          <div class="row-fluid">
-            <ul class="thumbnails">
-              <li class="span4">
+				map.entities.push(pin);
+				map.entities.push(pin2);
+				map.entities.push(pin3);
+			}
+		</script>
+	</head>
+	<body onload="GetMap();">
+		<header>
+			<!-- Start: Navigation wrapper -->
+			<div class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a href="index.html" class="brand brand-bootbus">MobileNewsNow</a>
+						<!-- Below button used for responsive navigation -->
+						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Start: Primary navigation -->
+						<div class="nav-collapse collapse">				
+							<ul class="nav pull-right">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Trending stories<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li class="nav-header">Stories</li>
+										<li><a href="product.html">Cat stuck in tree</a></li>
+										<li><a href="product.html">Man pees in bush</a></li>
+										<li><a href="product.html">Free Starbucks</a></li>
+										<li><a href="all_products.html">All stories</a></li>
+									</ul>									
+								</li>								
+								<li><a href="faq.html">FAQ</a></li>
+								<li><a href="contact_us.html">Contact us</a></li>
+								<li><a href="signup.html">Sign up</a></li>
+								<li><a href="signin.html">Sign in</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div style="margin-top:-20px;" class="content">
+			<div class="slider">
+				<div class="container-fluid">
+					<div id="heroSlider" class="center">
+						<!-- <img class="center" src="img/placeholder.jpg" class="thumbnail"> -->
+						<div class="main-video">
+							<div id='videos'>
+								<video style = "display:none" id='localVideo' muted></video>
+								<video id='remoteVideo' autoplay></video>
+							</div>
+						</div>
+						<div class = "overlay">
+							<div class="overlay-person">
+								on the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
+							</div>
+							<div class="overlay-headline">
+							Breaking News
+							</div>
+							<div class="overlay-tag">
+								#SourceReporter
+							</div> 
+						</div>
+					</div>
+				</div>
+				<br>
+			</div>
+			<br>
+			<!-- End: slider -->
+			<!-- Start: PRODUCT LIST -->
+				<div class="container">
+					<!-- <div class="page-header"> -->
+					<!--	<h2>Our products</h2> -->
+					<!-- </div> -->
+					<div class="row-fluid">
+						<ul class="thumbnails">
+							<li class="span4">
 		<div class="thumbnail">
-                  <iframe width="360" height="200" src="//www.youtube.com/embed/9j7o8ixbrLo?w=360&h=200" frameborder="0" allowfullscreen></iframe>
-                  <!-- <video width="360" height="200" controls="controls" class="video-stream" x-webkit-airplay="allow" src="//www.youtube.com/embed/9j7o8ixbrLo?w=360&h=200&html5=true"></video> -->
-                  <div class="caption">
-                    <h3>Cat stuck in tree</h3>
-		  </div>
-                    <!-- <p> -->
-                    <!--   Few attractive words about your product.Few attractive words about your product. -->
-                    <!--   Few attractive words about your product.Few attractive words about your product. -->
-                    <!-- </p> -->
-                  </div>         
-                <!-- </div> -->
-              </li>
-              <li class="span4">
-                <div class="thumbnail">
-		  <iframe width="360" height="200" src="//www.youtube.com/embed/m8LwKrjQqfc?w=360&w=200" frameborder="0" allowfullscreen></iframe>
-                  <div class="caption">
-                    <h3>Divers fight off shark</h3>
-                  </div>
-                </div>
-              </li>
-              <li class="span4">
+									<iframe width="360" height="200" src="//www.youtube.com/embed/9j7o8ixbrLo?w=360&h=200" frameborder="0" allowfullscreen></iframe>
+									<!-- <video width="360" height="200" controls="controls" class="video-stream" x-webkit-airplay="allow" src="//www.youtube.com/embed/9j7o8ixbrLo?w=360&h=200&html5=true"></video> -->
+									<div class="caption">
+										<h3>Cat stuck in tree</h3>
+			</div>
+										<!-- <p> -->
+										<!--	Few attractive words about your product.Few attractive words about your product. -->
+										<!--	Few attractive words about your product.Few attractive words about your product. -->
+										<!-- </p> -->
+									</div>				
+								<!-- </div> -->
+							</li>
+							<li class="span4">
+								<div class="thumbnail">
+			<iframe width="360" height="200" src="//www.youtube.com/embed/m8LwKrjQqfc?w=360&w=200" frameborder="0" allowfullscreen></iframe>
+									<div class="caption">
+										<h3>Divers fight off shark</h3>
+									</div>
+								</div>
+							</li>
+							<li class="span4">
 		<div class="thumbnail">
 		<iframe width="360" height="200" src="//www.youtube.com/embed/ewmXQEZ4CCA?w=360&w=200" frameborder="0" allowfullscreen></iframe>
-                  <div class="caption">
-                    <h3>Free starbucks</h3>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      <!-- End: PRODUCT LIST -->
-      <div  class="map" id="myMap" style="position:relative; height:400px;"></div>
+									<div class="caption">
+										<h3>Free starbucks</h3>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			<!-- End: PRODUCT LIST -->
+			<div	class="map" id="myMap" style="position:relative; height:400px;"></div>
 
 
-    <!-- <div class="map">
+		<!-- <div class="map">
 <iframe height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=&amp;aq=&amp;sll=47.606163,-122.332077&amp;sspn=0.281937,0.676346&amp;t=m&amp;ie=UTF8&amp;ll=47.614033,-122.286072&amp;spn=0.281894,0.676346&amp;z=11&amp;output=embed&amp;q=47.606163,-122.332077&amp;q=47.606163,-122.332080"></iframe></div> -->
 <!-- <br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=&amp;aq=&amp;sll=47.606163,-122.332077&amp;sspn=0.281937,0.676346&amp;t=m&amp;ie=UTF8&amp;ll=47.614033,-122.286072&amp;spn=0.281894,0.676346&amp;z=11" style="color:#0000FF;text-align:left">View Larger Map</a></small> -->
-    </div>
-    <div class="center"><a style="font-size: 30px;" class="center btn btn-primary btn-large" href="/client.html">Share your story!</a></div>
-    <br/>
-    </div>
-    <!-- End: MAIN CONTENT -->
-    <!-- Start: FOOTER -->
-    <footer>
-      <div class="container">
-        <p>
-          &copy; 2013 MobileNewsNow, Inc. All Rights Reserved.
-        </p>
-      </div>
-    </footer>
-    <!-- End: FOOTER -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/boot-business.js"></script>
+		</div>
+		<div class="center"><a style="font-size: 30px;" class="center btn btn-primary btn-large" href="/client.html">Share your story!</a></div>
+		<br/>
+		</div>
+		<!-- End: MAIN CONTENT -->
+		<!-- Start: FOOTER -->
+		<footer>
+			<div class="container">
+				<p>
+					&copy; 2013 MobileNewsNow, Inc. All Rights Reserved.
+				</p>
+			</div>
+		</footer>
+		<!-- End: FOOTER -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/boot-business.js"></script>
 
-      <script src="/socket.io/socket.io.js"></script>
-      <script src='/scripts/adapter.js'></script>
-      <script src='/scripts/reporter.js'></script>
-      <script>
-      var count = 0;
-      var urls = [];
-      $.getJSON('/recorded_videos/recorded.json', function(data){
-        urls = data;
-        document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
-      });
+		<script src="/socket.io/socket.io.js"></script>
+		<script src='/scripts/adapter.js'></script>
+		<script src='/scripts/reporter.js'></script>
+		<script>
+			var count = 0;
+			var urls = [];
+			$.getJSON('/recorded_videos/recorded.json', function(data){
+				urls = data;
+				document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+			});
 
-      socket.on('message', function(message) {
-        if (message.type == 'overlay') {
-          $('.' + message.className).html(message.content);
-        }
+			socket.on('message', function(message) {
+				if (message.type == 'overlay') {
+					$('.' + message.className).html(message.content);
+				}
 
-        if (message === 'bye' || (message.type == 'live' && message.state == false)) {
-          console.log('Reporter has left the session');
-          document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
-        }
+				if (message === 'bye' || (message.type == 'live' && message.state == false)) {
+					console.log('Reporter has left the session');
+					document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+				}
 
-        if (message.type == 'live' && message.state == true) {
-          console.log('bringing back remote video');
-          attachMediaStream(remoteVideo, remoteStream);
-        }
-      });
-      </script>
-  </body>
+				if (message.type == 'live' && message.state == true) {
+					console.log('bringing back remote video');
+					attachMediaStream(remoteVideo, remoteStream);
+				}
+			});
+		</script>
+	</body>
 </html>
