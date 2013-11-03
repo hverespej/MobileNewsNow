@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+		<link href="/styles/common.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<!-- Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml -->
+		<div class="content-container-wide">
+			<div class="overlay-headline">Breaking news!</div>
+			<div
+				class="toggle-button circular"
+				style="width:150px;height:150px;background-image:url('/images/btn-play-small.png');position:absolute;right:40px;top:285px;"
+				onclick="swapToggleButtonImg();">
+			</div>
+		</div>
+		<script src="/bower_components/jquery/jquery.min.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function swapToggleButtonImg() {
+				var currImage = $(".toggle-button").css("background-image");
+				if (currImage.indexOf("play") > 0) {
+					$(".toggle-button").css("background-image", "url('/images/btn-stop-small.png')");
+				} else {
+					$(".toggle-button").css("background-image", "url('/images/btn-play-small.png')");
+				}
+			}
+		</script>
+	</body>
+</html>
