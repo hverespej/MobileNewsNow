@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="MobileNewsNow | Short description about company">
-		<meta name="author" content="Your name">
-		<title>MobileNewsNow | Mobile News Now</title>
+		<meta name="description" content="MobileNewsNow">
+		<title>MobileNewsNow</title>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<!-- Bootstrap responsive -->
@@ -98,24 +97,17 @@
 		<div style="margin-top:-20px;" class="content">
 			<div class="slider">
 				<div class="container-fluid">
-					<div id="heroSlider" class="center">
-						<!-- <img class="center" src="img/placeholder.jpg" class="thumbnail"> -->
-						<div class="main-video">
-							<div id='videos'>
-								<video style = "display:none" id='localVideo' muted></video>
-								<video id='remoteVideo' autoplay></video>
+					<div id="heroSlider" style="height:366px;width:651px;">
+						<div class="playback-container" style="width:651px;height:366px;background-color:black;color:white;position:absolute;">
+							<div style="position:absolute;top:0px;left:0px;">
+								On the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
 							</div>
-						</div>
-						<div class = "overlay">
-							<div class="overlay-person">
-								on the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
-							</div>
-							<div class="overlay-headline">
-							Breaking News
-							</div>
-							<div class="overlay-tag">
-								#SourceReporter
-							</div> 
+							<div class="overlay-headline" style="position:absolute;top:10px;left:0px;">Breaking News</div>
+							<div class="overlay-tag" style="position:absolute;top:20px;">#SourceReporter</div> 
+							<!--
+							<video style = "display:none" id='localVideo' muted style="width:100%;height:100%;"></video>
+							<video id='remoteVideo' autoplay></video>
+							-->
 						</div>
 					</div>
 				</div>
