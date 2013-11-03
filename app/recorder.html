@@ -7,6 +7,7 @@
 		<iframe name = 'frame'></iframe>
 		<div class = "fileUploadDialog">
 			<form id = "fileUploadForm" action="/uploadVideo" target = 'frame' method="post" enctype="multipart/form-data">
+				<input type = "text" name = "email"/>
 				<input id = "fileUploadButton" type="file" accept="video/*;capture=camcorder" name = "video"/>
 				<input type = "submit">
 			</form>

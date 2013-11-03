@@ -16,14 +16,15 @@ if (!fs.existsSync(recFolder)) {
 }
 
 app.post('/uploadVideo', function(req, resp) {
-	resp.send('Saving Video...');
 	console.log('Uploading Video')
-	fs.createReadStream(req.files.video.path).pipe(fs.createWriteStream(recFolder + '/' + req.files.video.name));
 	var data = JSON.parse(fs.readFileSync(recFolder + '/recorded.json'));
 	data.push({
 		loc: '/recorded_videos/' + req.files.video.name
 	});
 	fs.writeFileSync(recFolder + '/recorded.json', JSON.stringify(data));
+	console.log('Written recorded.json');
+	fs.createReadStream(req.files.video.path).pipe(fs.createWriteStream(recFolder + '/' + req.files.video.name));
+	console.log('Moved Video files');
 	resp.send('Saved Video');
 });
 
