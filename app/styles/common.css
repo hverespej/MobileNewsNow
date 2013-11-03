@@ -5,6 +5,12 @@ body{
 	width: 100%;
 }
 
+@font-face
+{
+	font-family: 'Raleway';
+	src: url('/fonts/Raleway/Raleway-Thin.otf');
+}
+
 /* Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml */
 .content-container-tall {
 	width: 720px;
@@ -18,8 +24,6 @@ body{
 .content-container-wide {
 	width: 1280px;
 	height: 720px;
-	border: 3px solid black;
-	margin: 5px;
 	position: absolute;
 	overflow: hidden;
 }
