@@ -13,7 +13,7 @@
 			<br />
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-					<a class="btn btn-primary btn-xlarge" style="width:100%;" href="/report.html">Report</a>
+					<a class="btn btn-primary btn-xlarge" style="width:100%;" id = "report" href="/report.html">Report</a>
 				</div>
 			</div>
 			<br />
@@ -42,5 +42,10 @@
 		</div>
 		<script src="/bower_components/jquery/jquery.min.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script>
+			document.getElementById('report').onclick = function(){
+				document.body.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			}
+		</script>
 	</body>
 </html>
