@@ -109,6 +109,10 @@
 				<div class="container-fluid">
 					<div id="heroSlider" class="playback-wrapper">
 						<div class="playback-container">
+							<div id="liveVide" class="live-notice-container blinking hide">
+								<span class="live-notice-dot"></span>
+								<span class="live-notice-text">Live</span>
+							</div>
 							<div class="overlay-reporter">
 								On the scene: </span><b class = 'overlay-name'>Jim Sanders</b>
 							</div>
@@ -246,6 +250,7 @@
 
         if (message === 'bye' || (message.type == 'live' && message.state == false)) {
           console.log('Reporter has left the session');
+          $('#liveVide').hide();
           drawLocalVideo();
         }
 
@@ -254,6 +259,7 @@
           for (var key in m) {
             $('.' + key).html(m[key]);
           }
+          $('#liveVide').show();
           attachMediaStream(remoteVideo, remoteStream);
         }
       });
