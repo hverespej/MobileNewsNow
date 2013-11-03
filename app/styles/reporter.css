@@ -7,11 +7,15 @@
 	position: absolute;
 }
 
-#live{
+#live {
 	background-image:url('/images/btn-play-small.png');
 }
 
-#live.isLive{
+#live.record-btn {
+	background-image:url('/images/btn-record-small.png');
+}
+
+#live.isLive {
 	background-image:url('/images/btn-pause-small.png');
 }
 
