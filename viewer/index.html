@@ -198,7 +198,10 @@
         urls = data;
         document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
       });
-
+      document.getElementById('remoteVideo').addEventListener('ended', function(){
+          console.log('Video ended, playing next');
+          document.getElementById('remoteVideo').src = urls[count++ % urls.length].loc;
+      });
       socket.on('message', function(message) {
         if (message.type == 'overlay') {
           $('.' + message.className).html(message.content);
