@@ -1,6 +1,8 @@
 /*TODO DOwnload this font instead of linking it*/
 body{
 	font-family: 'Raleway', sans-serif;
+	height: 100%;
+	width: 100%;
 }
 
 /* Samsung S3 dimensions from http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml */
@@ -20,10 +22,6 @@ body{
 	margin: 5px;
 	position: absolute;
 	overflow: hidden;
-}
-
-button {
-	width: 100%;
 }
 
 .btn-xlarge {

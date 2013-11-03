@@ -3,28 +3,49 @@
 	height: 100%;
 }
 
-body{
-	height: 100%;
-	width: 100%;
-}
-
 #localVideo{
 	width: 100%;
 }
 
-.poppanel{
+.poppanel {
 	position: absolute;
-	width: 1115px;
-	top: 17px;
-	height: 689px;
-	margin: 0;
-	color: black;
-	opacity: 0.7;
+	width: 1000px;
+	top: 0px;
+	left: 0px;
+	height: 720px;
+	color: #ffffff;
 }
 
-.info{
-    padding: 38px 0 0 90px;
-	
+.poppanel-content {
+	position: absolute;
+	width: 850px;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	padding: 5%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.poppanel-content-fakeentry {
+	width: 200px;
+	height: 200px;
+	background-color: #000055;
+}
+
+.poppanel-tab {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	left: 850px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.tab-index-1 {
+	top: 10px;
+}
+
+.tab-index-2 {
+	top: 170px;
 }
 
 .poppanel span.plabel {
@@ -35,17 +56,16 @@ body{
 }
 
 .reporter{
-    margin: 0 0 5px 0;
+		margin: 0 0 5px 0;
 }
 
 .onscene{
 	width: 366px;
 	margin: 0 26px 0 0;
-
 }
-.onscenename{
-    width: 488px;
 
+.onscenename{
+	width: 488px;
 }
 
 input{
@@ -55,3 +75,4 @@ input{
 	padding: 0 0 0 21px;
 	color: white;
 }
+
