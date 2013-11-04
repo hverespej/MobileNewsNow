@@ -21,3 +21,8 @@ The sequence of the steps is important, if you do not see live video form your m
 ## Browser Compatiability
 Since the project uses WebRTC, a WebRTC compatiable browser on a mobile device would be required. Chrome on Android supports WebRTC and the web page is designed to display well on a Samsung Galaxy S3 mobile phone. 
 For the desktop, you would need a browser that supports WebRTC - Chrome or Firefox. The UI is fairly responsive and should work on various screen resolutions. 
+
+## Links
+1. [http://blog.nparashuram.com/2013/11/sourcereporter-seattle-anglehack.html](Blog Post)
+2. [https://www.youtube.com/watch?v=5d74jUsTzB8](Demo Video)
+3. [http://3.bp.blogspot.com/-XF3nuspz-qA/Unf2_jHaAyI/AAAAAAAAC5I/rtt9ZoqoCKw/s640/1412242_10152005150344066_1972352706_o.jpg](Team presenting)
