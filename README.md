@@ -4,7 +4,7 @@
 SourceReporter is a way to democratize news reporting. It is a way to enable citizens record news events in their local neighbourhood. It was built for [https://apphack13seattle.eventbrite.com/](AngelHack AppHack Seattle 2013) Hackathon. 
 
 ## Pre-Requisites
-1. Install NodeJS from [http://nodejs.org]
+1. Install NodeJS from http://nodejs.org
 2. Install Bower using `npm install bower -g`
 3. Install Grunt using `npm install grunt-cli -g`
 
@@ -23,6 +23,6 @@ Since the project uses WebRTC, a WebRTC compatiable browser on a mobile device w
 For the desktop, you would need a browser that supports WebRTC - Chrome or Firefox. The UI is fairly responsive and should work on various screen resolutions. 
 
 ## Links
-1. [http://blog.nparashuram.com/2013/11/sourcereporter-seattle-anglehack.html](Blog Post)
-2. [https://www.youtube.com/watch?v=5d74jUsTzB8](Demo Video)
-3. [http://3.bp.blogspot.com/-XF3nuspz-qA/Unf2_jHaAyI/AAAAAAAAC5I/rtt9ZoqoCKw/s640/1412242_10152005150344066_1972352706_o.jpg](Team presenting)
+1. (http://blog.nparashuram.com/2013/11/sourcereporter-seattle-anglehack.html)[Blog Post]
+2. (https://www.youtube.com/watch?v=5d74jUsTzB8)[Demo Video]
+3. (http://3.bp.blogspot.com/-XF3nuspz-qA/Unf2_jHaAyI/AAAAAAAAC5I/rtt9ZoqoCKw/s640/1412242_10152005150344066_1972352706_o.jpg)[Team presenting]
